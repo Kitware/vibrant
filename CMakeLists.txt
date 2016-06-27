@@ -1,5 +1,7 @@
 project( vidtk_all )
 
+include(ExternalProject)
+
 cmake_minimum_required( VERSION 2.8 )
 # Configure the warning and code coverage suppression file
 configure_file(
@@ -109,6 +111,8 @@ set( VIDTK_HTML_INSTALL OFF CACHE BOOL "Install the html doc" FORCE )
 option( USE_CPPDB_BACKEND "Build database backend support with CPPDB" "OFF")
 option( VIDTK_ENABLE_OPENCV "Enable OpenCV-dependent code" "OFF" )
 
+find_package(fletch)
+
 add_subdirectory( vidtk3p )
 add_subdirectory( wrappers )
 include_directories( wrappers )
@@ -166,6 +170,14 @@ if( VIDTK_COMMON_SDK_INSTALL )
     DESTINATION lib/cmake
   )
   install(EXPORT common-sdk-targets DESTINATION lib/cmake)
+endif()
+
+# Build external projects, currently only vivia
+include(AddProject)
+
+option( BUILD_VIVIA "Build the ViViA project" "OFF")
+if( BUILD_VIVIA)
+   include(add_vivia)
 endif()
 
 # build a CPack driven installer package
