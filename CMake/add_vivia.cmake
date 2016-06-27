@@ -1,8 +1,10 @@
 # Add the Vivia project to the vibrant build
 
-add_project(vivia
-            https://github.com/kitware/vivia.git
-            "master"
+ExternalProject_Add(vivia
+            SOURCE_DIR ${PROJECT_SOURCE_DIR}/packages/vivia
+            PREFIX ${PROJECT_BINARY_DIR}/vivia
+            CMAKE_GENERATOR ${gen}
+            CMAKE_ARGS
             -DLIBJSON_INCLUDE_DIR:PATH=${LIBJSON_INCLUDE_DIR}
             -DLIBJSON_LIBRARY:PATH=${LIBJSON_LIBRARY}
             -DQT_QMAKE_EXECUTABLE:PATH=${fletch_DIR}/install/bin/qmake
@@ -16,6 +18,7 @@ add_project(vivia
             -DKML_DIR:PATH=${fletch_DIR}/install/lib/cmake/
             -DVXL_DIR:PATH=${VXL_DIR}
             -Dvidtk_DIR:PATH=${vidtk_all_BINARY_DIR}
-            -DUSE_VTK_62:BOOL=ON
-            -DVISGUI_ENABLE_GDAL:BOOL=OFF
+            -DUSE_VTK_62:BOOL=TRUE
+            -DVISGUI_ENABLE_GDAL:BOOL=FALSE
+            -DVISGUI_DISABLE_FIXUP_BUNDLE:BOOL=TRUE
             )

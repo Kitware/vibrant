@@ -1,0 +1,3 @@
+[submodule "packages/vivia"]
+	path = packages/vivia
+	url = https://github.com/kitware/vivia
