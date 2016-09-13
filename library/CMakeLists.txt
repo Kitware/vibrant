@@ -5,13 +5,13 @@ include(${VXL_CMAKE_DIR}/UseVXL.cmake)
 include(GitVersionTest)
 check_reachable_git_hash(VXL ${VXL_CMAKE_DIR} "32ab06055371e91191404e40ad6273c5808b401a")
 
+find_package( Boost REQUIRED )
+
 if( VIDTK_ENABLE_OPENCV )
 find_package( OpenCV REQUIRED )
 endif( VIDTK_ENABLE_OPENCV )
 
-add_definitions( -DBOOST_ALL_NO_LIB )
 include_directories( ${Boost_INCLUDE_DIRS} )
-
 include_directories( ${vidtk_SOURCE_DIR} ${vidtk_BINARY_DIR} )
 
 include_directories( ${VXL_VCL_INCLUDE_DIR} )
