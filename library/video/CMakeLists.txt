@@ -1,6 +1,3 @@
-find_package(Boost REQUIRED)
-include_directories(SYSTEM ${Boost_INCLUDE_DIRS})
-
 include_directories( ${VXL_BRL_INCLUDE_DIR} )
 
 set( vidtk_video_sources

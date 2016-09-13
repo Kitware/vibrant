@@ -1,7 +1,5 @@
-find_package(Boost REQUIRED)
-include_directories(SYSTEM ${Boost_INCLUDE_DIRS})
-
 include_directories( ${VXL_GEL_INCLUDE_DIR} )
+
 set( vidtk_utilities_sources
   unchecked_return_value.h          unchecked_return_value.cxx
   checked_bool.h                    checked_bool.cxx

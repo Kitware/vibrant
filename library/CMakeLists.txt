@@ -11,6 +11,8 @@ if( VIDTK_ENABLE_OPENCV )
 find_package( OpenCV REQUIRED )
 endif( VIDTK_ENABLE_OPENCV )
 
+find_package( Boost REQUIRED COMPONENTS thread filesystem system )
+add_definitions( -DBOOST_ALL_NO_LIB )
 include_directories( ${Boost_INCLUDE_DIRS} )
 include_directories( ${vidtk_SOURCE_DIR} ${vidtk_BINARY_DIR} )
 
