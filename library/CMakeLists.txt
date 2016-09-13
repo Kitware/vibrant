@@ -3,7 +3,7 @@ project( vidtk )
 find_package( VXL REQUIRED )
 include(${VXL_CMAKE_DIR}/UseVXL.cmake)
 include(GitVersionTest)
-check_reachable_git_hash(VXL ${VXL_CMAKE_DIR} "32ab06055371e91191404e40ad6273c5808b401a")
+#check_reachable_git_hash(VXL ${VXL_CMAKE_DIR} "32ab06055371e91191404e40ad6273c5808b401a")
 
 find_package( Boost REQUIRED )
 
