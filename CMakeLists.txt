@@ -109,6 +109,9 @@ set( VIDTK_HTML_INSTALL OFF CACHE BOOL "Install the html doc" FORCE )
 option( USE_CPPDB_BACKEND "Build database backend support with CPPDB" "OFF")
 option( VIDTK_ENABLE_OPENCV "Enable OpenCV-dependent code" "OFF" )
 
+set( BOOST_ROOT "" CACHE PATH "The root path to Boost" )
+find_package( Boost REQUIRED )
+
 add_subdirectory( vidtk3p )
 add_subdirectory( wrappers )
 include_directories( wrappers )

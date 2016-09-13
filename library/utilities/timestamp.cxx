@@ -146,7 +146,7 @@ vcl_ostream & operator<< (vcl_ostream& str, const vidtk::timestamp& obj)
 
   if (obj.has_time())
   {
-    char* p = vcl_ctime(&tt); // this may return null if tt is out of range,
+    char* p;// = vcl_ctime(&tt); // this may return null if tt is out of range,
     if (p)
     {
       c_tim = " (";

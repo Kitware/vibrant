@@ -5,9 +5,6 @@ include(${VXL_CMAKE_DIR}/UseVXL.cmake)
 include(GitVersionTest)
 check_reachable_git_hash(VXL ${VXL_CMAKE_DIR} "32ab06055371e91191404e40ad6273c5808b401a")
 
-set( BOOST_ROOT "" CACHE PATH "The root path to Boost" )
-find_package( Boost 1.42 REQUIRED COMPONENTS thread )
-
 if( VIDTK_ENABLE_OPENCV )
 find_package( OpenCV REQUIRED )
 endif( VIDTK_ENABLE_OPENCV )
